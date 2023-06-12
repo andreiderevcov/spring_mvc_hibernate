@@ -3,7 +3,7 @@
 <html>
 <body>
 
-<h2>All Emplouees</h2>
+<h2>All Employees</h2>
 <br>
 
 <table>
@@ -21,6 +21,10 @@
             <c:param name="empId" value="${emp.id}"/>
         </c:url>
 
+        <c:url var="deleteButton" value="/deleteEmployee">
+            <c:param name="empId" value="${emp.id}"/>
+        </c:url>
+
         <tr>
             <td>${emp.name}</td>
             <td>${emp.surname}</td>
@@ -28,7 +32,10 @@
             <td>${emp.salary}</td>
             <td>
                 <input type="button" value="Update"
-                onclick="window.location.href = '${updateButton}'"/>
+                       onclick="window.location.href = '${updateButton}'"/>
+
+                <input type="button" value="Delete"
+                       onclick="window.location.href = '${deleteButton}'"/>
             </td>
         </tr>
     </c:forEach>
@@ -38,16 +45,10 @@
 <br>
 
 <input type="button" value="Add"
-    onclick="window.location.href = 'addNewEmployee'"/>
+       onclick="window.location.href = 'addNewEmployee'"/>
 
 
 </body>
-
-
-
-
-
-
 
 
 </html>
